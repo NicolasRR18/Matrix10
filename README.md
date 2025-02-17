@@ -230,17 +230,32 @@ def transponer_matriz(matriz):
     
     return transpuesta
 if __name__ == "__main__":
-    filas = int(input("Ingrese el número de filas para matriz A: "))
-    columnas = int(input("Ingrese el número de columnas para matriz A: "))
+    filas = int(input("Ingrese el número de filas para la matriz: "))
+    columnas = int(input("Ingrese el número de columnas para la matriz: "))
     
-    # Hacer las matrices
-    matriz = añadir_numeros(filas, columnas, "A")
-
- while True:
-        print("1. Multiplicar matrices (A x B)")
-        print("2. Multiplicar matrices (B x A)")
+    matriz = añadir_numeros(filas, columnas, "original")
+    
+    while True:
+        print("Operaciones disponibles:")
+        print("1. Ver matriz original")
+        print("2. Ver matriz transpuesta")
         print("3. Salir")
         
-        opcion = input("Seleccione una operación (1-6): ")
+        opcion = input("Seleccione una operación (1-3): ")
+        
+        if opcion == "1":
+            print("Matriz original:")
+            imprimir_matriz(matriz)
+            
+        elif opcion == "2":
+            transpuesta = transponer_matriz(matriz)
+            print("Matriz transpuesta:")
+            imprimir_matriz(transpuesta)
+            
+        elif opcion == "3":
+            print("Programa finalizado.")
+            break
+        else:
+            print("Opción no válida. Por favor, seleccione una opción válida.")
 
 ```
