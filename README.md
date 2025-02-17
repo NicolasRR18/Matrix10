@@ -229,5 +229,18 @@ def transponer_matriz(matriz):
         transpuesta.append(fila)
     
     return transpuesta
+if __name__ == "__main__":
+    filas = int(input("Ingrese el número de filas para matriz A: "))
+    columnas = int(input("Ingrese el número de columnas para matriz A: "))
+    
+    # Hacer las matrices
+    matriz = añadir_numeros(filas, columnas, "A")
+
+ while True:
+        print("1. Multiplicar matrices (A x B)")
+        print("2. Multiplicar matrices (B x A)")
+        print("3. Salir")
+        
+        opcion = input("Seleccione una operación (1-6): ")
 
 ```
