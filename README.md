@@ -259,3 +259,76 @@ if __name__ == "__main__":
             print("Opción no válida. Por favor, seleccione una opción válida.")
 
 ```
+
+============================================================
+
+# Punto-4
+
+``` python
+# Sin tener la matriz base
+def añadir_numeros(filas, columnas ) -> list:
+    matriz = []
+    for i in range(filas):
+        fila = []
+        for j in range(columnas):
+            n = int(input("Ingrese los elementos de su matriz"))
+            fila.append(n)
+        matriz.append(fila)
+    return matriz
+# Imprime la matriz, fila por fila
+def imprimir_matriz(matriz):
+    for i in range(len(matriz)):
+        print(matriz[i])
+def suma_de_fila(matriz, numero_fila):
+    suma = 0
+    for j in range(len(matriz[numero_fila])):
+        suma += matriz[numero_fila][j]
+    return suma
+if __name__ == "__main__":
+    filas = int(input("Ingrese el número de filas para matriz A: "))
+    columnas = int(input("Ingrese el número de columnas para matriz A: "))
+    # Hacer las matrices
+    matriz = añadir_numeros(filas, columnas,)
+    while True:
+        print("Que fila quieres sumar?")
+        numero_fila = int(input("Ingresa el numero de la fila"))
+        resultado = suma_de_fila(matriz, numero_fila)
+        print(resultado)
+```
+
+============================================================
+
+# Punto-5
+
+``` python
+
+# Sin tener la matriz base
+def añadir_numeros(filas, columnas ) -> list:
+    matriz = []
+    for i in range(filas):
+        fila = []
+        for j in range(columnas):
+            n = int(input("Ingrese los elementos de su matriz"))
+            fila.append(n)
+        matriz.append(fila)
+    return matriz
+# Imprime la matriz, fila por fila
+def imprimir_matriz(matriz):
+    for i in range(len(matriz)):
+        print(matriz[i])
+def suma_de_columna(matriz, numero_columna):
+    suma = 0
+    for i in range(matriz)
+        suma += matriz[i][numero_columna]
+    return suma
+if __name__ == "__main__":
+    filas = int(input("Ingrese el número de filas para matriz A: "))
+    columnas = int(input("Ingrese el número de columnas para matriz A: "))
+    # Hacer las matrices
+    matriz = añadir_numeros(filas, columnas,)
+    while True:
+        print("Que columna quieres sumar?")
+        numero_columna = int(input("Ingresa el numero de la columna"))
+        resultado = suma_de_columna(matriz, numero_columna)
+        print(resultado)
+```
