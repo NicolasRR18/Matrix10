@@ -192,6 +192,9 @@ if __name__ == "__main__":
         elif opcion == "3":
             print("Programa finalizado.")
 
+
+```
+
 ============================================================
 
 # Punto-3
