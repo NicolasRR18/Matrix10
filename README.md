@@ -113,3 +113,118 @@ if __name__ == "__main__":
             print("Opción no válida. Intente nuevamente.")
 
 ```
+============================================================
+
+# Punto-2
+
+``` python
+
+# Sin tener la matriz base
+def añadir_numeros(filas, columnas ) -> list:
+    matriz = []
+    for i in range(filas):
+        fila = []
+        for j in range(columnas):
+            n = int(input("Ingrese los elementos de su matriz"))
+            fila.append(n)
+        matriz.append(fila)
+    return matriz
+
+# Imprime la matriz, fila por fila
+def imprimir_matriz(matriz):
+    for i in range(len(matriz)):
+        print(matriz[i])
+#Esta es la suma de matrices
+
+def multiplicar_matrices(matriz1, matriz2):
+    if len(matriz1[0]) != len(matriz2):
+        return None  # Las matrices no se pueden multiplicar
+        
+    filas_m1 = len(matriz1)
+    columnas_m2 = len(matriz2[0])
+    resultado = []
+    
+    for i in range(filas_m1):
+        fila_resultado = []
+        for j in range(columnas_m2):
+            elemento = 0
+            for k in range(len(matriz2)):
+                elemento += matriz1[i][k] * matriz2[k][j]
+            fila_resultado.append(elemento)
+        resultado.append(fila_resultado)
+    
+    return resultado
+
+if __name__ == "__main__":
+    filas_a = int(input("Ingrese el número de filas para matriz A: "))
+    columnas_a = int(input("Ingrese el número de columnas para matriz A: "))
+    
+    filas_b = int(input("Ingrese el número de filas para matriz B: "))
+    columnas_b = int(input("Ingrese el número de columnas para matriz B: "))
+    
+    # Hacer las matrices
+    matriz_a = añadir_numeros(filas_a, columnas_a, "A")
+    matriz_b = añadir_numeros(filas_b, columnas_b, "B")
+    # menu para ver que operacion se quiere realizar
+    while True:
+        print("1. Multiplicar matrices (A x B)")
+        print("2. Multiplicar matrices (B x A)")
+        print("3. Salir")
+        
+        opcion = input("Seleccione una operación (1-6): ")
+                        
+        if opcion == "1":
+            if columnas_a == filas_b:
+                resultado = multiplicar_matrices(matriz_a, matriz_b)
+                print("\nResultado de A x B:")
+                imprimir_matriz(resultado)
+            else:
+                print("\nError: El número de columnas de A debe ser igual al número de filas de B")
+        
+        elif opcion == "2":
+            if columnas_b == filas_a:
+                resultado = multiplicar_matrices(matriz_b, matriz_a)
+                print("Resultado de B x A:")
+                imprimir_matriz(resultado)
+            else:
+                print("Error: El número de columnas de B debe ser igual al número de filas de A")
+        
+        elif opcion == "3":
+            print("Programa finalizado.")
+
+============================================================
+
+# Punto-3
+
+``` python
+# Sin tener la matriz base
+def añadir_numeros(filas, columnas ) -> list:
+    matriz = []
+    for i in range(filas):
+        fila = []
+        for j in range(columnas):
+            n = int(input("Ingrese los elementos de su matriz"))
+            fila.append(n)
+        matriz.append(fila)
+    return matriz
+
+# Imprime la matriz, fila por fila
+def imprimir_matriz(matriz):
+    for i in range(len(matriz)):
+        print(matriz[i])
+
+def transponer_matriz(matriz):
+    filas = len(matriz)
+    columnas = len(matriz[0])
+    
+    # Crear matriz transpuesta con dimensiones invertidas
+    transpuesta = []
+    for i in range(columnas):
+        fila = []
+        for j in range(filas):
+            fila.append(matriz[j][i])
+        transpuesta.append(fila)
+    
+    return transpuesta
+
+```
